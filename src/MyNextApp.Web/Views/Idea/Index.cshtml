@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MyNextApp.Components.Domain.Idea>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br/>
+<p>
+    <a href='@Url.Action("Create")' class="btn btn-success">Got a New Idea?</a>
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+    </tr>
+}
+
+</table>
